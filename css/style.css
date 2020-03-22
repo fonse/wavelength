@@ -1,6 +1,7 @@
-.container {
-  margin-top: 40px;
+.main-container {
+  margin: 40px auto 0;
   font-size: 14px;
+  width:860px;
 }
 
 h1 {
@@ -15,11 +16,21 @@ h1 {
   display: none;
 }
 
+.menu-ctas{
+  width: 400px;
+  margin:auto;
+}
+
+.menu-btn-container{
+  margin:20px 0;
+}
+
 .dial-container{
   margin: 20px auto 0;
   width:565px;
-  height:282px;
+  height:332px;
   overflow: hidden;
+  position:relative;
 }
 
 .dial {
@@ -27,6 +38,36 @@ h1 {
   width:565px;
   height:565px;
 }
+
+.dial-padding{
+  height: 50px;
+  width: 100%;
+  background: #fff;
+  position:absolute;
+  bottom: 0;
+  z-index: 20;
+}
+
+.dial-cover{
+  width: 565px;
+  height: 565px;
+  position: absolute;
+  top: 0;
+  border-radius: 565px;
+  background-color: #efefef;
+  z-index: 10;
+}
+
+.dial-needle {
+  background: url("../img/needle.png");
+  width:565px;
+  height:565px;
+  position: absolute;
+  top: 0;
+  z-index: 50;
+  rotate: 0deg;
+}
+
 
 .card-container {
   width:400px;

@@ -3,28 +3,39 @@
   <head>
     <meta charset="utf-8">
     <title>Wavelength</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <main role="main" class="container">
-      <h1>Bootstrap starter template</h1>
+    <main role="main" class="main-container">
+      <h1>Wavelength</h1>
 
       <div id ="menu">
         <div class="how-to-play" id="how-to-play">
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non rutrum lacus. Fusce et ante in dolor fringilla porttitor sit amet ut arcu. Nunc velit justo, tincidunt a cursus eget, tincidunt at libero. Etiam malesuada vitae sem vitae efficitur. Phasellus vitae purus quis libero tristique commodo ut vitae turpis. Nunc cursus gravida odio, ut egestas tellus hendrerit vitae. Nam sollicitudin ultricies diam, semper rhoncus nunc semper quis. Integer finibus aliquam tortor, et sollicitudin mauris dictum et. In ut consectetur lacus, suscipit vulputate nibh. Praesent est neque, auctor ultricies varius eu, elementum non turpis. Etiam convallis vestibulum lorem sodales hendrerit. Duis ut ante at erat interdum malesuada. Praesent dapibus arcu non urna euismod lobortis. Sed commodo non nulla a blandit. Nullam consequat sapien eget leo fermentum consequat. </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non rutrum lacus. Fusce et ante in dolor fringilla porttitor sit amet ut arcu. Nunc velit justo, tincidunt a cursus eget, tincidunt at libero. Etiam malesuada vitae sem vitae efficitur. Phasellus vitae purus quis libero tristique commodo ut vitae turpis. Nunc cursus gravida odio, ut egestas tellus hendrerit vitae. Nam sollicitudin ultricies diam, semper rhoncus nunc semper quis. Integer finibus aliquam tortor, et sollicitudin mauris dictum et. In ut consectetur lacus, suscipit vulputate nibh. Praesent est neque, auctor ultricies varius eu, elementum non turpis. Etiam convallis vestibulum lorem sodales hendrerit. Duis ut ante at erat interdum malesuada. Praesent dapibus arcu non urna euismod lobortis. Sed commodo non nulla a blandit. Nullam consequat sapien eget leo fermentum consequat. </p>
         </div>
-        <div class="menu-cta">
-          <button type="button" id="generate-game" class="btn btn-primary">Be a psychic</button>
-          <button type="button" id="join-game" class="btn btn-primary">Join a game</button>
+
+        <div class="menu-ctas">
+          <div class="menu-btn-container">
+            <button type="button" id="generate-game" class="btn btn-lg btn-block btn-primary">Be a psychic</button>
+          </div>
+          <div class="btn-container input-group input-group-lg">
+            <input type="text" class="form-control" placeholder="Game code">
+            <div class="input-group-append">
+              <button class="btn btn-outline-primary" type="button" id="button-addon2">Join</button>
+            </div>
+          </div>
         </div>
       </div>
-
 
       <div class="hidden" id="game-container">
         <div class="dial-container">
           <div id="dial" class="dial">&nbsp;</div>
+          <div class="dial-padding">&nbsp;</div>
+          <div id="dial-cover" class="dial-cover">&nbsp;</div>
+          <div id="dial-needle" class="dial-needle">&nbsp;</div>
         </div>
 
         <div class="card-container"><!--

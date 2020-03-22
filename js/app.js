@@ -4,14 +4,20 @@ $(document).ready(function(){
     hideMenu();
     generateGame();
   });
+
+  $(document).on("keypress", function(e){
+    if (e.originalEvent.key == 'a') {
+      moveNeedle(-1);
+    } else if (e.originalEvent.key == 'd') {
+      moveNeedle(1);
+    }
+  })
 });
 
 // ------------------------- Dom Control ------------------------- //
 function hideMenu(){
   $("#menu").hide();
 }
-
-// -105deg -- 69deg
 
 function displayGame(percentage, card){
   displayDial(percentage)
@@ -47,6 +53,13 @@ function generateGame(){
   var card_index = Math.floor(Math.random() * Cards.length);
 
   displayGame(percentage, Cards[card_index]);
+}
+
+function moveNeedle(direction){
+  var angle = parseInt($("#dial-needle").css("rotate"));
+  angle += direction;
+
+  $("#dial-needle").css("rotate", angle + "deg");
 }
 
 // ------------------------- Game Data ------------------------- //
