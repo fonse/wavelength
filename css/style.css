@@ -1,0 +1,51 @@
+.container {
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.how-to-play{
+  fontsize: 12px;
+}
+
+.hidden{
+  display: none;
+}
+
+.dial-container{
+  margin: 20px auto 0;
+  width:565px;
+  height:282px;
+  overflow: hidden;
+}
+
+.dial {
+  background: url("../img/dial.png");
+  width:565px;
+  height:565px;
+}
+
+.card-container {
+  width:400px;
+  height: 100px;
+  margin: 20px auto 0;
+}
+
+.card-half {
+  font-size: 18px;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+  display:inline-block;
+}
+
+.card-left {
+  background: red;
+}
+
+.card-right {
+  background: blue;
+}
