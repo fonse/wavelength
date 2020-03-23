@@ -7,6 +7,8 @@ $(document).ready(function(){
       moveNeedle(-1);
     } else if (e.key == 'd') {
       moveNeedle(1);
+    } else if (e.key == ' ') {
+      openCloseScreen();
     }
   });
 
@@ -30,9 +32,9 @@ $(document).ready(function(){
 });
 
 // ------------------------- DOM Control ------------------------- //
-function displayGame(percentage, card, code){
+function displayGame(percentage, card_index, code){
   displayDial(percentage)
-  displayCard(card)
+  displayCard(card_index)
   $("#game-code").text(code);
 }
 
@@ -44,11 +46,11 @@ function displayDial(percentage){
   $("#dial").css("transform", "rotate(" + angle + "deg)");
 }
 
-function displayCard(card){
-  var left_color_index = MathUtils.random(Wavelength.colors.length);
-  do {
-    var right_color_index = MathUtils.random(Wavelength.colors.length);
-  } while (left_color_index == right_color_index);
+function displayCard(card_index){
+  var card = Wavelength.cards[card_index];
+
+  var left_color_index = card_index % Wavelength.colors.length;
+  var right_color_index = (card_index + 1) % Wavelength.colors.length;
 
   $("#card-left").text(card[0]).css("background-color", Wavelength.colors[left_color_index]);
   $("#card-right").text(card[1]).css("background-color", Wavelength.colors[right_color_index]);
@@ -60,7 +62,7 @@ function generateGame(){
   var card_index = MathUtils.random(Wavelength.cards.length);
   var code = encodeGame(percentage, card_index);
 
-  displayGame(percentage, Wavelength.cards[card_index], code);
+  displayGame(percentage, card_index, code);
   openScreen();
 }
 
@@ -69,7 +71,7 @@ function joinGame(code){
 
   closeScreen();
   setTimeout(function(){
-      displayGame(decodedGame[0], Wavelength.cards[decodedGame[1]], code);
+      displayGame(decodedGame[0], decodedGame[1], code);
   }, 1000);
 }
 
@@ -128,9 +130,41 @@ Wavelength.cards = [
   ["Bad pizza topping", "Good pizza topping"],
   ["Useless invention", "Useful invention"],
   ["Dark", "Light"],
+  ["Soft", "Hard"],
+  ["Short", "Long"],
+  ["Dry", "Wet"],
+  ["Weak", "Strong"],
   ["Guilty pleasure", "Openly love"],
   ["Ugly man", "Beautiful man"],
+  ["Rough", "Smooth"],
+  ["Pointy", "Round"],
+  ["Better hot", "Better cold"],
+  ["Bad habit", "Good habit"],
+  ["Bad advice", "Good advice"],
+  ["Bad person", "Good person"],
+  ["Bad etiquette", "Good etiquette"],
+  ["Bad superpower", "Good superpower"],
+  ["Quiet place", "Loud place"],
+  ["Temporary", "Permanent"],
+  ["Normal greeting", "Weird greeting"],
+  ["Normal thing to own", "Weird thing to own"],
+  ["Dictatorship", "Democracy"],
+  ["Forbidden", "Encouraged"],
+  ["Bad", "Good"],
+  ["Good", "Evil"],
+  ["Plain", "Fancy"],
+  ["Low quality", "High quality"],
+  ["Unccool", "Cool"],
+  ["Unpopular", "Popular"],
+  ["Underrated", "Overrated"],
+  ["Bad movie", "Good movie"],
+  ["Waste of time", "Good use of time"],
+  ["Cheap", "Expensive"],
+  ["Stupid", "Brilliant"],
+  ["Requires luck", "Requires skill"],
+  ["Sad song", "Happy song"],
   ["A sandwich", "Not a sandwich"],
+  ["A salad", "Not a salad"]
 ]
 
 Wavelength.colors = [
