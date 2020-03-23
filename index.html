@@ -12,32 +12,7 @@
     <main role="main" class="main-container">
       <h1>Wavelength</h1>
 
-      <div id ="menu">
-        <div class="how-to-play" id="how-to-play">
-          <p>Is a <b>social guessing game </b> in which two teams compete to read each other's minds.
-            Teams take turns rotating a dial to where they think a hidden bullseye is located on a spectrum. <br>
-            One of the players on your team — the Psychic — knows exactly where the bullseye is, and draws a card with a pair of binaries on it
-            (such as: Job - Career, Rough - Smooth, Fantasy - Sci-Fi, Sad Song - Happy Song, etc). <br>
-            <b>The Psychic</b> must then provide a clue that is *conceptually* where the bullseye is located between those two binaries. <br><br>
-            <!-- <i>For example, if the card this round is HOT-COLD and the bullseye is slightly to the "cold" side of the centre, the Psychic needs to give a clue somewhere in that region.
-            Perhaps "salad"? After the Psychic gives their clue, their team discusses where they think the bullseye is located and turns the dial to that location on that spectrum.
-            The closer to the center of the bullseye the team guess, the more points they score!</i>--> </p>
-        </div>
-
-        <div class="menu-ctas">
-          <div class="menu-btn-container">
-            <button type="button" id="generate-game" class="btn btn-lg btn-block btn-primary">Be a psychic</button>
-          </div>
-          <div class="btn-container input-group input-group-lg">
-            <input type="text" class="form-control" placeholder="Game code">
-            <div class="input-group-append">
-              <button class="btn btn-outline-primary" type="button" id="button-addon2">Join</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hidden" id="game-container">
+      <div id="game-container">
         <div class="dial-container">
           <div id="dial" class="dial">&nbsp;</div>
           <div class="dial-padding">&nbsp;</div>
@@ -49,6 +24,29 @@
         --><div id="card-left" class="card-half card-left"></div><!--
       --><div id="card-right" class="card-half card-right"></div><!--
     --></div>
+
+        <div class="game-buttons">
+          <button type="button" id="open-close-screen" class="btn btn-lg btn-primary">Open/Close Screen</button>
+        </div>
+      </div>
+
+      <div id ="menu">
+        <div class="menu-ctas">
+          <div class="menu-btn-container">
+            <button type="button" id="randomize-game" class="btn btn-lg btn-block btn-primary">Generate new game</button>
+            <div>
+              Share this code with your group: <strong id="game-code"></strong>.
+            </div>
+          </div>
+          <form id="join-game">
+            <div class="btn-container input-group input-group-lg">
+              <input type="text" class="form-control" placeholder="Game code">
+              <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="submit">Join</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
 
       <footer>
