@@ -13,6 +13,7 @@ $(document).ready(function(){
       moveNeedle(1);
     } else if (e.key == ' ') {
       openCloseScreen();
+      return false;
     }
   });
 
