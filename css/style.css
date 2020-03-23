@@ -20,11 +20,12 @@ time, mark, audio, video {
 }
 
 .main-container {
-  font-family: sans;
+  font-family: sans-serif;
   line-height: 1;
   margin: 0 auto;
   font-size: 14px;
   width:100%;
+  color:#333;
 }
 
 h1 {
@@ -34,7 +35,7 @@ h1 {
   background-color: #1a1a35;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  margin-bottom: 35px;
   color: white;
   padding: 20px;
 }
@@ -50,13 +51,20 @@ p {
 }
 
 .menu-ctas{
-  width: 400px;
-  margin:auto;
+  width: 545px;
+  margin: 50px auto 20px;
 }
 
-.menu-btn-container{
-  margin:20px 0;
+
+/* ------------ Buttons  ------------ */
+
+/*.btn {
+  background-color: #e1561d;
 }
+
+.btn:hover {
+  background-color: #e87a54;
+}*/
 
 /* ------------ Game ------------ */
 
@@ -136,10 +144,23 @@ p {
   margin-top:20px;
 }
 
+.game-code-text {
+    text-transform: uppercase;
+    width: 71%;
+    text-align: center;
+    margin: auto;
+    margin-top: 7px;
+}
+
+.game-code-n {
+  font-weight: bold;
+  font-size: 2em;
+  margin: 5px;
+}
+
 /* ------------ Footer  ------------ */
 
 .footer-color {
-  width: 50%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;

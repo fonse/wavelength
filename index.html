@@ -25,28 +25,29 @@
       --><div id="card-right" class="card-half card-right"></div><!--
     --></div>
 
-        <div class="game-buttons">
-          <button type="button" id="open-close-screen" class="btn btn-lg btn-primary">Open/Close Screen</button>
-        </div>
       </div>
 
-      <div id ="menu">
-        <div class="menu-ctas">
-          <div class="menu-btn-container">
-            <button type="button" id="randomize-game" class="btn btn-lg btn-block btn-primary">Generate new game</button>
-            <div>
-              Share this code with your group: <strong id="game-code"></strong>.
-            </div>
+      <div class="menu-ctas">
+        <div class="row">
+          <div class="col">
+            <button type="button" id="randomize-game" class="btn btn-lg btn-block btn-outline-info">Generate new game</button>
           </div>
-          <form id="join-game">
-            <div class="btn-container input-group input-group-lg">
-              <input type="text" class="form-control" placeholder="Game code">
-              <div class="input-group-append">
-                <button class="btn btn-outline-primary" type="submit">Join</button>
+          <div class="col">
+            <form id="join-game">
+              <div class="btn-container input-group input-group-lg">
+                <input type="text" class="form-control" placeholder="Game code">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-info" type="submit">Join</button>
+                </div>
               </div>
-            </div>
-          </form>
-        </div>
+            </form>
+          </div>
+       </div>
+      </div>
+
+      <div class="game-code-text">
+        <p>Share this code with your group:</p>
+        <p class="game-code-n" id="game-code"></p>
       </div>
 
       <footer>
