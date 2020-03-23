@@ -117,13 +117,14 @@ p {
 
 
 .card-container {
-  width:420px;
+  width:440px;
   height: 90px;
   line-height: 90px;
   margin: 20px auto 0;
 }
 
 .card-half {
+	color: #000;
   font-size: 18px;
   text-align: center;
   width: 50%;
