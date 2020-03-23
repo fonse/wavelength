@@ -40,12 +40,13 @@ h1 {
   width: 50%;
   height: 100%;
   display:inline-block;
+  line-height: 100px;
 }
 
 .card-left {
-  background: red;
+  border-radius: 10px 0px 0px 10px;
 }
 
 .card-right {
-  background: blue;
+  border-radius: 0px 10px 10px 0px;
 }

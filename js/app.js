@@ -20,7 +20,7 @@ function displayGame(percentage, card){
 }
 
 function displayDial(percentage){
-  var  min_angle = -105;
+  var min_angle = -105;
   var max_angle = 69; // nice
 
   var angle = (max_angle - min_angle) * percentage / 100 + min_angle;
@@ -28,16 +28,25 @@ function displayDial(percentage){
 }
 
 function displayCard(card){
-  $("#card-left").text(card[0]);
-  $("#card-right").text(card[1]);
+  var left_color_index = Math.floor(Math.random() * Colors.length);
+  do {
+    var right_color_index = Math.floor(Math.random() * Colors.length);
+  } while (left_color_index == right_color_index);
+
+
+
+
+  $("#card-left").text(card[0]).css("background-color",Colors[left_color_index]);
+  $("#card-right").text(card[1]).css("background-color",Colors[right_color_index]);
+
 }
 
 // ------------------------- Game Logic ------------------------- //
 function generateGame(){
   var percentage = Math.floor(Math.random() * 101);
-  var cardIndex = Math.floor(Math.random() * Cards.length);
+  var card_index = Math.floor(Math.random() * Cards.length);
 
-  displayGame(percentage, Cards[cardIndex]);
+  displayGame(percentage, Cards[card_index]);
 }
 
 // ------------------------- Game Data ------------------------- //
@@ -49,4 +58,18 @@ var Cards = [
   ["Tastes bad", "Tastes good"],
   ["Unsexy emoji", "Sexy emoji"],
   ["Uncool", "Cool"],
+  ["Bad pizza topping", "Good pizza topping"],
+  ["Useless invention", "Useful invention"],
+  ["Dark", "Light"],
+  ["Guilty pleasure", "Openly love"],
+  ["Ugly man", "Beautiful man"],
+]
+
+var Colors = [
+  "#1596d4",
+  "#d95624",
+  "#6d739a",
+  "#0d7c74",
+  "#e4c0c8",
+  "#e1c231"
 ]
