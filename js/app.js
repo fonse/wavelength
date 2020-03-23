@@ -50,7 +50,11 @@ function displayCard(card_index){
   var card = Wavelength.cards[card_index];
 
   var left_color_index = card_index % Wavelength.colors.length;
-  var right_color_index = (card_index + 1) % Wavelength.colors.length;
+  var right_color_index = (card_index + card[0].length) % Wavelength.colors.length;
+
+  if (left_color_index == right_color_index){
+    right_color_index = (right_color_index + 1) % Wavelength.colors.length
+  }
 
   $("#card-left").text(card[0]).css("background-color", Wavelength.colors[left_color_index]);
   $("#card-right").text(card[1]).css("background-color", Wavelength.colors[right_color_index]);
@@ -133,36 +137,64 @@ Wavelength.cards = [
   ["Soft", "Hard"],
   ["Short", "Long"],
   ["Dry", "Wet"],
+  ["Divided", "Whole"],
   ["Weak", "Strong"],
   ["Guilty pleasure", "Openly love"],
+  ["Guilty pleasure", "Actually just bad"],
   ["Ugly man", "Beautiful man"],
   ["Rough", "Smooth"],
   ["Pointy", "Round"],
+  ["Nature", "Nurture"],
+  ["Unstable", "Stable"],
   ["Better hot", "Better cold"],
   ["Bad habit", "Good habit"],
   ["Bad advice", "Good advice"],
   ["Bad person", "Good person"],
+  ["Bad movie", "Good movie"],
   ["Bad etiquette", "Good etiquette"],
   ["Bad superpower", "Good superpower"],
-  ["Quiet place", "Loud place"],
+  ["Smells bad", "Smells good"],
+  ["Quiet", "Loud"],
+  ["Optional", "Mandatory"],
   ["Temporary", "Permanent"],
+  ["Messy food", "Clean food"],
   ["Normal greeting", "Weird greeting"],
   ["Normal thing to own", "Weird thing to own"],
   ["Dictatorship", "Democracy"],
   ["Forbidden", "Encouraged"],
+  ["Feels bad", "Feels good"],
   ["Bad", "Good"],
   ["Good", "Evil"],
+  ["Dirty", "Clean"],
+  ["Unethical", "Ethical"],
+  ["Peaceful", "Warlike"],
+  ["Unethical to eat", "Ethical to eat"],
+  ["Safe", "Dangerous"],
   ["Plain", "Fancy"],
+  ["Commerce", "Art"],
+  ["Dog name", "Cat name"],
+  ["Science", "Pseudoscience"],
+  ["Mental Activity", "Physical Activity"],
+  ["Unreasonable phobia", "Reasonable phobia"],
   ["Low quality", "High quality"],
-  ["Unccool", "Cool"],
+  ["Hard to sit on", "Easy to sit on"],
+  ["Hard to find", "Easy to find"],
+  ["Uncool", "Cool"],
+  ["Unhygienic", "Hygienic"],
+  ["Old fashioned", "Avant garde"],
   ["Unpopular", "Popular"],
+  ["Easy to kill", "Hard to kill"],
+  ["Unpopular opinion", "Popular opinion"],
+  ["Unpopular activity", "Popular activity"],
   ["Underrated", "Overrated"],
-  ["Bad movie", "Good movie"],
+  ["Underrated skill", "Overrated skill"],
+  ["Action Movie", "Adventure movie"],
   ["Waste of time", "Good use of time"],
   ["Cheap", "Expensive"],
   ["Stupid", "Brilliant"],
   ["Requires luck", "Requires skill"],
   ["Sad song", "Happy song"],
+  ["Millenial", "Gen Z"],
   ["A sandwich", "Not a sandwich"],
   ["A salad", "Not a salad"]
 ]
@@ -170,10 +202,12 @@ Wavelength.cards = [
 Wavelength.colors = [
   "#1596d4",
   "#d95624",
-  "#6d739a",
-  "#0d7c74",
-  "#e4c0c8",
-  "#e1c231"
+  "#e1c231",
+  "#e4bbc1",
+  "#8a7c99",
+  "#bbd2be",
+  "#0e997b",
+  "#dcded0"
 ]
 
 // ------------------------- Math Stuff Data ------------------------- //

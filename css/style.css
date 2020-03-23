@@ -117,8 +117,9 @@ p {
 
 
 .card-container {
-  width:400px;
-  height: 100px;
+  width:420px;
+  height: 90px;
+  line-height: 90px;
   margin: 20px auto 0;
 }
 
@@ -128,7 +129,6 @@ p {
   width: 50%;
   height: 100%;
   display:inline-block;
-  line-height: 100px;
 }
 
 .card-left {
