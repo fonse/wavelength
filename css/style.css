@@ -1,10 +1,30 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
 .main-container {
+  line-height: 1;
   margin: 40px auto 0;
   font-size: 14px;
   width:100%;
 }
-
-
 
 h1 {
   text-align: center;
@@ -67,12 +87,17 @@ h1 {
 }
 
 .dial-cover{
-  width: 565px;
-  height: 565px;
   position: absolute;
+  width: 0;
+  height: 0;
   top: 0;
   border-radius: 565px;
-  background-color: #efefef;
+  border-radius: 565px;
+  border-top: 282px #72b6b5 solid;
+  border-bottom: 282px transparent solid;
+  border-left: 282px transparent solid;
+  border-right: 282px #72b6b5 solid;
+  rotate: -45deg;
   z-index: 10;
 }
 
