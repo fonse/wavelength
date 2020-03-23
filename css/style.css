@@ -89,10 +89,10 @@ p {
   height: 0;
   top: 0;
   border-radius: 565px;
-  border-top: 282px #72b6b5 solid;
-  border-bottom: 282px transparent solid;
-  border-left: 282px transparent solid;
-  border-right: 282px #72b6b5 solid;
+  border-top: 283px #72b6b5 solid;
+  border-bottom: 283px transparent solid;
+  border-left: 283px transparent solid;
+  border-right: 283px #72b6b5 solid;
   transform: rotate(135deg);
   transition: all ease-in-out 1s;
   z-index: 10;

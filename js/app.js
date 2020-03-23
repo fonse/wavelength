@@ -16,8 +16,11 @@ $(document).ready(function(){
 
   $("#join-game").on("submit", function(){
     var code = $(this).find(":text").val();
-    $(this).find(":text").val('');
-    joinGame(code);
+    if (code){
+      $(this).find(":text").val('');
+      joinGame(code);
+    }
+
     return false;
   });
 
