@@ -30,13 +30,14 @@ time, mark, audio, video {
 
 h1 {
   font-size: 2em;
+	letter-spacing: 0.2em;
   text-align: center;
   text-transform: uppercase;
   background-color: #1a1a35;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 35px;
-  color: white;
+  color: #fff;
   padding: 20px;
 }
 
@@ -52,19 +53,8 @@ p {
 
 .menu-ctas{
   width: 545px;
-  margin: 50px auto 20px;
+  margin: 40px auto 20px;
 }
-
-
-/* ------------ Buttons  ------------ */
-
-/*.btn {
-  background-color: #e1561d;
-}
-
-.btn:hover {
-  background-color: #e87a54;
-}*/
 
 /* ------------ Game ------------ */
 
@@ -120,7 +110,7 @@ p {
   width:440px;
   height: 90px;
   line-height: 90px;
-  margin: 20px auto 0;
+  margin: 10px auto 0;
 }
 
 .card-half {
@@ -159,12 +149,19 @@ p {
   margin: 5px;
 }
 
+.how-to-play{
+	margin-top: 20px;
+	font-size: 0.8em;
+	font-style: italic;
+	text-align: center;
+}
+
 /* ------------ Footer  ------------ */
 
 .footer-color {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 .footer-color-01 {
   height: 1vw;

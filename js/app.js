@@ -29,6 +29,7 @@ $(document).ready(function(){
 
   $("#randomize-game").on("click", function(){
     generateGame();
+    $(this).blur();
   });
 });
 
