@@ -1,16 +1,32 @@
 .main-container {
   margin: 40px auto 0;
   font-size: 14px;
-  width:860px;
+  width:100%;
 }
+
+
 
 h1 {
   text-align: center;
+  text-transform: uppercase;
+  background-color: #1a1a35;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  color: white;
+  padding: 20px;
 }
 
+/* ------------ Menu ------------ */
+
 .how-to-play{
-  fontsize: 12px;
+  padding: 13px 3px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: justify;
 }
+
 
 .hidden{
   display: none;
@@ -24,6 +40,8 @@ h1 {
 .menu-btn-container{
   margin:20px 0;
 }
+
+/* ------------ Game ------------ */
 
 .dial-container{
   margin: 20px auto 0;
@@ -65,7 +83,6 @@ h1 {
   position: absolute;
   top: 0;
   z-index: 50;
-  rotate: 0deg;
 }
 
 
@@ -90,4 +107,48 @@ h1 {
 
 .card-right {
   border-radius: 0px 10px 10px 0px;
+}
+
+
+/* ------------ Footer  ------------ */
+
+.footer-color {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+.footer-color-01 {
+  height: 1vw;
+  background-color: #ef9ba1;
+}
+.footer-color-02 {
+  height: 1vw;
+  background-color: #e86644;
+}
+
+.footer-color-03 {
+  height: 1vw;
+  background-color: #79bbb9;
+}
+
+.footer-color-04 {
+  height: 1vw;
+  background-color: #afd5ac;
+}
+
+
+/* ------------ Responsive ------------ */
+
+@media screen and (max-width: 601px) {
+  h1 {
+    width: 100%;
+  }
+  .how-to-play{
+    padding: 20px;
+    width: 100%;
+  }
+  .footer-color {
+    width: 100%;
+  }
 }

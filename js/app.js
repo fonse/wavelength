@@ -39,9 +39,6 @@ function displayCard(card){
     var right_color_index = Math.floor(Math.random() * Colors.length);
   } while (left_color_index == right_color_index);
 
-
-
-
   $("#card-left").text(card[0]).css("background-color",Colors[left_color_index]);
   $("#card-right").text(card[1]).css("background-color",Colors[right_color_index]);
 
@@ -55,7 +52,7 @@ function generateGame(){
   displayGame(percentage, Cards[card_index]);
 }
 
-function moveNeedle(direction){
+ function moveNeedle(direction){
   var angle = parseInt($("#dial-needle").css("rotate"));
   angle += direction;
 
@@ -76,6 +73,7 @@ var Cards = [
   ["Dark", "Light"],
   ["Guilty pleasure", "Openly love"],
   ["Ugly man", "Beautiful man"],
+  ["A sandwich", "Not a sandwich"],
 ]
 
 var Colors = [
