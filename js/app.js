@@ -3,6 +3,10 @@ $(document).ready(function(){
   generateGame();
 
   $(document).on("keypress", function(e){
+    if ($(e.target).is(":text")){
+      return;
+    }
+
     if (e.key == 'a') {
       moveNeedle(-1);
     } else if (e.key == 'd') {
@@ -12,14 +16,10 @@ $(document).ready(function(){
     }
   });
 
-  $("#open-close-screen").on("click", function(){
-    openCloseScreen();
-  });
-
   $("#join-game").on("submit", function(){
-    var code = $(this).find(":text").val();
+    var code = $(this).find(":text").val().replace(/\D/g,'');
     if (code){
-      $(this).find(":text").val('');
+      $(this).find(":text").val('').blur();
       joinGame(code);
     }
 
@@ -105,11 +105,16 @@ function closeScreen(){
 }
 
 function encodeGame(percentage, card_index){
-  return MathUtils.cantorPair(percentage, card_index);
+  var precode = MathUtils.cantorPair(percentage, card_index);
+  var shift = MathUtils.sumDigits(precode) % 5;
+
+  return parseInt(shiftString(precode.toString().padStart(5, "0"), shift));
 }
 
 function decodeGame(code){
-  var game = MathUtils.reverseCantorPair(code);
+  var shift = MathUtils.sumDigits(parseInt(code)) % 5;
+  var precode = parseInt(shiftString(code.padStart(5, "0"), -1 * shift));
+  var game = MathUtils.reverseCantorPair(precode);
   game[1] = game[1] % Wavelength.cards.length;
 
   return game;
@@ -210,7 +215,7 @@ Wavelength.colors = [
   "#dcded0"
 ]
 
-// ------------------------- Math Stuff Data ------------------------- //
+// ------------------------- Math Stuff ------------------------- //
 var MathUtils = {};
 
 MathUtils.random = function(n){
@@ -218,16 +223,41 @@ MathUtils.random = function(n){
 }
 
 MathUtils.cantorPair = function(x, y) {
-    var z = ((x + y) * (x + y + 1)) / 2 + y;
-    return z;
+  var z = ((x + y) * (x + y + 1)) / 2 + y;
+  return z;
 }
 
 MathUtils.reverseCantorPair = function(z){
-    var pair = [];
-    var t = Math.floor((-1 + Math.sqrt(1 + 8 * z))/2);
-    var x = t * (t + 3) / 2 - z;
-    var y = z - t * (t + 1) / 2;
-    pair[0] = x;
-    pair[1] = y;
-    return pair;
+  var pair = [];
+  var t = Math.floor((-1 + Math.sqrt(1 + 8 * z))/2);
+  var x = t * (t + 3) / 2 - z;
+  var y = z - t * (t + 1) / 2;
+  pair[0] = x;
+  pair[1] = y;
+  return pair;
 }
+
+MathUtils.sumDigits = function(n){
+  var sum = 0;
+  while (n) {
+    sum += n % 10;
+    n = Math.floor(n / 10);
+  }
+
+  return sum;
+}
+
+function shiftString(str, step) {
+  var length = str.length;
+  step = step % length;
+  step = step < 0 ? length + step : step;
+  if (!str || length === 1 || !step) {
+      return str;
+  }
+  var reverseString = (str) => str.split('').reverse().join('');
+  str = reverseString(str);
+  var s1 = str.slice(0, step);
+  var s2 = str.slice(step);
+
+  return reverseString(s1) + reverseString(s2);
+};
