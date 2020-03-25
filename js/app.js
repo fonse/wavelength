@@ -255,10 +255,10 @@ Wavelength.cards = [
 
 Wavelength.colors = [
   "#1596d4",
-  "#d95624",
   "#e1c231",
   "#e4bbc1",
   "#8a7c99",
+  "#d95624",
   "#bbd2be",
   "#0e997b",
   "#dcded0"
