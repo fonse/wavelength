@@ -127,6 +127,7 @@ p {
 	top: 269px;
 	right: 0px;
 	cursor:pointer;
+	box-shadow: -2px 2px 1px rgba(50,50,50,0.1);
 }
 
 .dial-needle {
