@@ -59,11 +59,20 @@ p {
 /* ------------ Game ------------ */
 
 .dial-container{
-  margin: 20px auto 0;
+	width:600px;
+	height:470px;
+	margin: 20px auto 0;
+	position:relative;
+	overflow: hidden;
+}
+
+.dial-viewport{
   width:565px;
   height:332px;
   overflow: hidden;
-  position:relative;
+  position:absolute;
+	top:16px;
+	left:18px;
 }
 
 .dial {
@@ -72,16 +81,16 @@ p {
   height:565px;
 }
 
-.dial-padding{
-  height: 50px;
-  width: 100%;
-  background: #fff;
+.dial-border{
+	width: 600px;
+  height: 600px;
+  background: url("../img/border.png");
   position:absolute;
-  bottom: 0;
+	top:0;
   z-index: 20;
 }
 
-.dial-cover{
+.dial-screen{
   position: absolute;
   width: 0;
   height: 0;
@@ -110,7 +119,10 @@ p {
   width:440px;
   height: 90px;
   line-height: 90px;
-  margin: 10px auto 0;
+	position:absolute;
+	z-index: 50;
+	bottom:20px;
+	left:80px;
 }
 
 .card-half {

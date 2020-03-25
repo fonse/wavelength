@@ -41,8 +41,8 @@ function displayGame(percentage, card_index, code){
 }
 
 function displayDial(percentage){
-  var min_angle = -105;
-  var max_angle = 69; // nice
+  var min_angle = -101;
+  var max_angle = 65;
 
   var angle = (max_angle - min_angle) * percentage / 100 + min_angle;
   $("#dial").css("transform", "rotate(" + angle + "deg)");
@@ -62,6 +62,31 @@ function displayCard(card_index){
   $("#card-right").text(card[1]).css("background-color", Wavelength.colors[right_color_index]);
 }
 
+function moveNeedle(direction){
+  var angle = Wavelength.state.needle + direction;
+  Wavelength.state.needle = Math.min(83, Math.max(-83, angle));
+
+  $("#dial-needle").css("transform", "rotate(" + Wavelength.state.needle + "deg)");
+}
+
+function openCloseScreen(){
+  if (Wavelength.state.screenClosed){
+    openScreen();
+  } else {
+    closeScreen();
+  }
+}
+
+function openScreen(){
+  $("#dial-screen").css("transform", "rotate(135deg)");
+  Wavelength.state.screenClosed = false;
+}
+
+function closeScreen(){
+  $("#dial-screen").css("transform", "rotate(-45deg)");
+  Wavelength.state.screenClosed = true;
+}
+
 // ------------------------- Game Logic ------------------------- //
 function generateGame(){
   var percentage = MathUtils.random(101);
@@ -79,31 +104,6 @@ function joinGame(code){
   setTimeout(function(){
       displayGame(decodedGame[0], decodedGame[1], code);
   }, 1000);
-}
-
-function moveNeedle(direction){
-  var angle = Wavelength.state.needle + direction;
-  Wavelength.state.needle = Math.min(88, Math.max(-88, angle));
-
-  $("#dial-needle").css("transform", "rotate(" + Wavelength.state.needle + "deg)");
-}
-
-function openCloseScreen(){
-  if (Wavelength.state.screenClosed){
-    openScreen();
-  } else {
-    closeScreen();
-  }
-}
-
-function openScreen(){
-  $("#dial-cover").css("transform", "rotate(135deg)");
-  Wavelength.state.screenClosed = false;
-}
-
-function closeScreen(){
-  $("#dial-cover").css("transform", "rotate(-45deg)");
-  Wavelength.state.screenClosed = true;
 }
 
 function encodeGame(percentage, card_index){
@@ -144,7 +144,6 @@ Wavelength.cards = [
   ["Soft", "Hard"],
   ["Short", "Long"],
   ["Dry", "Wet"],
-  ["Divided", "Whole"],
   ["Weak", "Strong"],
   ["Not addictive", "Addictive"],
   ["Normal", "Weird"],
@@ -170,6 +169,7 @@ Wavelength.cards = [
   ["Fruit", "Vegetable"],
   ["Optional", "Mandatory"],
   ["Temporary", "Permanent"],
+  ["Natural", "Artificial"],
   ["Messy food", "Clean food"],
   ["Normal greeting", "Weird greeting"],
   ["Normal thing to own", "Weird thing to own"],
