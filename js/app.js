@@ -31,6 +31,24 @@ $(document).ready(function(){
     generateGame();
     $(this).blur();
   });
+
+  $("#screen-handle").on("click", function(){
+    openCloseScreen();
+  });
+
+  var left_interval;
+  $("#card-left").on("mousedown", function(){
+    left_interval = setInterval(function(){ moveNeedle(-1); }, 50);
+  }).on("mouseup", function(){
+    clearInterval(left_interval)
+  });
+
+  var right_interval;
+  $("#card-right").on("mousedown", function(){
+    right_interval = setInterval(function(){ moveNeedle(1); }, 50);
+  }).on("mouseup", function(){
+    clearInterval(right_interval)
+  });
 });
 
 // ------------------------- DOM Control ------------------------- //
@@ -79,11 +97,13 @@ function openCloseScreen(){
 
 function openScreen(){
   $("#dial-screen").css("transform", "rotate(135deg)");
+  $("#screen-handle-wrapper").css("transform", "rotate(0deg)");
   Wavelength.state.screenClosed = false;
 }
 
 function closeScreen(){
   $("#dial-screen").css("transform", "rotate(-45deg)");
+  $("#screen-handle-wrapper").css("transform", "rotate(-180deg)");
   Wavelength.state.screenClosed = true;
 }
 
