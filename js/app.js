@@ -37,17 +37,21 @@ $(document).ready(function(){
   });
 
   var left_interval;
-  $("#card-left").on("mousedown", function(){
+  $("#card-left").on("mousedown touchstart", function(){
+    clearInterval(left_interval);
+    clearInterval(right_interval);
     left_interval = setInterval(function(){ moveNeedle(-1); }, 50);
-  }).on("mouseup", function(){
-    clearInterval(left_interval)
+  }).on("mouseup mouseout touchend touchcancel", function(){
+    clearInterval(left_interval);
   });
 
   var right_interval;
-  $("#card-right").on("mousedown", function(){
+  $("#card-right").on("mousedown touchstart", function(){
+    clearInterval(left_interval);
+    clearInterval(right_interval);
     right_interval = setInterval(function(){ moveNeedle(1); }, 50);
-  }).on("mouseup", function(){
-    clearInterval(right_interval)
+  }).on("mouseup mouseout touchend touchcancel", function(){
+    clearInterval(right_interval);
   });
 });
 
@@ -137,6 +141,7 @@ function decodeGame(code){
   var shift = MathUtils.sumDigits(parseInt(code)) % 5;
   var precode = parseInt(shiftString(code.padStart(5, "0"), -1 * shift));
   var game = MathUtils.reverseCantorPair(precode);
+  game[0] = game[0] % 101;
   game[1] = game[1] % Wavelength.cards.length;
 
   return game;
@@ -183,6 +188,7 @@ Wavelength.cards = [
   ["Bad movie", "Good movie"],
   ["Bad present", "Good present"],
   ["Bad superpower", "Good superpower"],
+  ["Bad meme", "Good meme"],
   ["Smells bad", "Smells good"],
   ["Not Huggable", "Huggable"],
   ["Quiet", "Loud"],
@@ -196,7 +202,6 @@ Wavelength.cards = [
   ["Dictatorship", "Democracy"],
   ["Forbidden", "Encouraged"],
   ["Feels bad", "Feels good"],
-  ["Bad", "Good"],
   ["Good", "Evil"],
   ["Villain", "Hero"],
   ["Limited", "Infinite"],
